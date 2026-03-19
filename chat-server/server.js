@@ -7,7 +7,7 @@ const { v4: uuidv4 } = require("uuid");
 const app = express();
 const httpServer = http.createServer(app);
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "https://sockit-io-library-h9t7.vercel.app" }));
 app.use(express.json());
 
 const ROOMS = ["general", "tech", "random"];
@@ -49,7 +49,7 @@ app.get("/api/rooms/:roomId/messages", (req, res) => {
 // ── Socket.IO ─────────────────────────────────────────────────────────────────
 
 const io = new Server(httpServer, {
-  cors: { origin: "http://localhost:3000", methods: ["GET", "POST"] },
+  cors: { origin: "https://sockit-io-library-h9t7.vercel.app", methods: ["GET", "POST"] },
 });
 
 // ✅ Defined AFTER io — no more ReferenceError
